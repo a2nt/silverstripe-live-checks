@@ -2,7 +2,6 @@
 
 namespace A2nt\LiveChecks\Tasks;
 
-use SilverStripe\Assets\File;
 use SilverStripe\Dev\BuildTask;
 use SilverStripe\ORM\DB;
 
@@ -19,7 +18,7 @@ class DumpMySQL extends BuildTask
 
         try {
             ob_clean();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
         }
 
         // check if gzip is on
@@ -27,7 +26,7 @@ class DumpMySQL extends BuildTask
             if (count(array_intersect(['mod_deflate', 'mod_gzip'], apache_get_modules())) > 0) {
                 $fileName .= '.gz';
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
         }
 
         header('Content-Disposition: attachment; filename="'.$fileName.'"');

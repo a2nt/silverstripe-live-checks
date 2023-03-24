@@ -1,0 +1,89 @@
+---
+Name: a2nt-silverstripe-live-checks-env-check
+---
+
+SilverStripe\EnvironmentCheck\EnvironmentCheckSuite:
+  registered_checks:
+    php:
+      definition: 'A2nt\LiveChecks\Checks\PHPVersionCheck'
+      title: 'PHP version'
+    mem:
+      definition: 'A2nt\LiveChecks\Checks\MemoryLimitCheck'
+      title: 'Memory Limit'
+    envvars:
+      definition: 'A2nt\LiveChecks\Checks\EnvVariablesCheck'
+      title: 'Env variables'
+    maxupload:
+      definition: 'A2nt\LiveChecks\Checks\UploadMaxCheck'
+      title: 'Upload max size'
+    space:
+      definition: 'A2nt\LiveChecks\Checks\FreeSpaceCheck'
+      title: 'Disk space available'
+    env:
+      definition: 'EnvTypeCheck'
+      title: 'Environment type'
+    tmpfolder:
+      definition: 'A2nt\LiveChecks\Checks\TMPFolderWritableCheck'
+      title: 'TMP Folder is writable?'
+    assetsfoder:
+      definition: 'A2nt\LiveChecks\Checks\AssetsWritableCheck'
+      title: 'Assets Folder is writable?'
+    curl:
+      definition: 'HasFunctionCheck("curl_init")'
+      title: 'curl available?'
+    gd:
+      definition: 'HasFunctionCheck("imagecreatetruecolor")'
+      title: 'PHP GD2 support'
+    webp:
+      definition: 'HasFunctionCheck("imagewebp")'
+      title: 'PHP WebP support is available?'
+    imagick:
+      definition: 'HasClassCheck("Imagick")'
+      title: 'PHP Imagick support'
+    db:
+      definition: 'DatabaseCheck("Page")'
+      title: 'Is the database accessible?'
+    url:
+      definition: 'URLCheck()'
+      title: 'Is the homepage accessible?'
+    session:
+      definition: 'SilverStripe\EnvironmentCheck\Checks\SessionCheck'
+      title: 'Home page Session check'
+    cache:
+      definition: 'CacheHeadersCheck'
+      title: 'Cache Headers'
+    file:
+      definition: 'FileWriteableCheck("error.log")'
+      title: 'Is the error.log file writable?'
+    mail:
+      definition: 'SMTPConnectCheck'
+      title: 'SMTP Connection'
+  registered_suites:
+    check:
+      - php
+      - mem
+      - envvars
+      - env
+      - space
+      - maxupload
+      - tmpfolder
+      - assetsfoder
+      - curl
+      - gd
+      - webp
+      - imagick
+      - db
+      - url
+      - session
+      - file
+      - mail
+      - cache
+    health:
+      - php
+      - db
+      - url
+      - file
+      - tmpfolder
+      - space
+      - mail
+
