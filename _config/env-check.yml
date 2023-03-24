@@ -57,7 +57,7 @@ SilverStripe\EnvironmentCheck\EnvironmentCheckSuite:
       title: 'Is the error.log file writable?'
     mail:
       definition: 'SMTPConnectCheck'
-      title: 'SMTP Connection'
+      title: 'PHP SMTP Connection (Use /dev/tasks/testemail to test SilverStripe mailer)'
   registered_suites:
     check:
       - php
