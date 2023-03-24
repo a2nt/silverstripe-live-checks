@@ -13,9 +13,16 @@
     "minimum-stability": "dev",
     "require": {
         "silverstripe/cms": "^4",
-	"sunnysideup/test-email": "*",
-	"silverstripe/environmentcheck": "*"
+        "sunnysideup/test-email": "*",
+        "silverstripe/environmentcheck": "*",
+        "sunnysideup/dataintegritytests": "*"
     },
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/a2nt/silverstripe-dataintegritytests"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "A2nt\\LiveChecks\\": "src/"
