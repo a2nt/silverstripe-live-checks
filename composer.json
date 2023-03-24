@@ -1,0 +1,22 @@
+{
+    "name": "a2nt/silverstripe-live-checks",
+    "description": "Checks silverstripe sub-systems state",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [{
+        "name": "Tony Air",
+        "email": "tony@twma.pro"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "silverstripe/cms": "^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "A2nt\\LiveChecks\\": "src/"
+        }
+    }
+}
