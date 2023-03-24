@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "require": {
         "silverstripe/cms": "^4",
-	"sunnysideup/test-email": "*"
+	"sunnysideup/test-email": "*",
+	"silverstripe/environmentcheck": "*"
     },
     "autoload": {
         "psr-4": {
